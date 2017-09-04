@@ -1,0 +1,50 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]##インデントガイド
+repo='nathanaelkane/vim-indent-guides'
+hook_add= '''
+  source ~/.config/nvim/plugins/vim-indent-guides.rc.vim
+'''
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+[[plugins]]##ステータス行等のテーマ一括設定
+repo    = 'vim-airline/vim-airline'
+depends = ['/vim-airline-themes']
+hook_add = '''
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme = 'deus'
+    let g:airline#extensions#virtualenv#enabled = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#buffer_idx_mode = 1
+    set laststatus=2
+'''
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+hook_post_update = '''
+  if dein#util#_is_windows()
+    let cmd = 'tools\\update-dll-mingw'
+  elseif dein#util#_is_cygwin()
+    let cmd = 'make -f make_cygwin.mak'
+  elseif executable('gmake')
+    let cmd = 'gmake'
+  else
+    let cmd = 'make'
+  endif
+  let g:dein#plugin.build = cmd
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = 'let g:deoplete#enable_at_startup = 1'
+on_i = 1
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
