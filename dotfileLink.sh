@@ -1,4 +1,4 @@
 #!bin/sh
-ln -sf ~dotfiles/nvim ~/.config/
-ln -sf ~dotfiles/.latexmkrc ~/
-ln -sf ~dotfiles/.zshrc ~/
+ln -sf ~dotfiles/nvim ~/.config/nvim
+ln -sf ~dotfiles/.latexmkrc ~/.latexmkrc
+ln -sf ~dotfiles/.zshrc ~/.zshrc
