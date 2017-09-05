@@ -1,9 +1,9 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Keita/.oh-my-zsh
+export ZSH=/home/lab/nakakei/.oh-my-zsh
 
 ##set path for pyenv
-export PATH="${PYENV_ROOT}/bin:$PATH"
-export PYENV_ROOT="${HOME}/.pyenv"
+#export PATH="${PYENV_ROOT}/bin:$PATH"
+#export PYENV_ROOT="${HOME}/.pyenv"
 export XDG_CONFIG_HOME="$HOME/.config"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -56,7 +56,6 @@ plugins=(git colorize emoji-clock emoji osx themes)
 
 # User configuration
 
-export PATH="/Users/Keita/torch/install/bin:/usr/local/share/python:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -86,8 +85,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#jupyterのエイリアス dropboxにしておいて，マルチアクセス可能にしておく
-alias jn="cd ~/Dropbox/ipythondir;jupyter notebook"
 alias vim="nvim"
 
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
