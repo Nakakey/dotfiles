@@ -4,8 +4,15 @@ if &compatible
 endif
 
 " dein.vimインストール時に指定したディレクトリをセット
-let s:dein_dir = expand('~/.cache/dein')
-
+" OSごとにインストール先を分けるのが吉らしい
+let OSTYPE = system('uname')
+if OSTYPE == "Darwin\n"
+	let s:dein_dir = expand('~/.cachenvimMac/dein')
+elseif OSTYPE == "Linux\n"
+	let s:dein_dir = expand('~/.cachenvimLinux/dein')
+elseif OSTYPE == "FreeBSD\n"
+	let s:dein_dir = expand('~/.cachenvimFreeBSD/dein')
+endif
 " dein.vimの実体があるディレクトリをセット
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
