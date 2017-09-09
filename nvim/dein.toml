@@ -42,9 +42,7 @@ hook_post_update = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = 'let g:deoplete#enable_at_startup = 1'
-on_i = 1
+repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
+repo = 'Shougo/context_filetype.vim'

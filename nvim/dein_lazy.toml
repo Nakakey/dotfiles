@@ -16,11 +16,18 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
+repo = 'Shougo/neosnippet'
+hook_source = '''
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+'''
+on_i  = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = ['neosnippet-snippets']
+repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]] # toml syntax
 repo = 'cespare/vim-toml'
@@ -31,4 +38,13 @@ repo= 'jalvesaq/Nvim-R'
 on_ft = ['rmd','r']
 hook_source = '''
 source ~/.config/nvim/plugins/Nvim-R.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+if = "has('nvim')"
+on_i = 1
+hook_source = '''
+source ~/.config/nvim/plugins/deoplete.rc.vim
 '''

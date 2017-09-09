@@ -3,6 +3,10 @@ if &compatible
   set nocompatible
 endif
 
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
 " dein.vimインストール時に指定したディレクトリをセット
 " OSごとにインストール先を分けるのが吉らしい
 let OSTYPE = system('uname')
@@ -88,17 +92,13 @@ set whichwrap+=h,l,<,>,[,],b,s
 "マウス入力有効
 set mouse=n
 
-"バッファをクリップボードにコピー,エラー吐かれる
+"バッファをクリップボードにコピー(for OSX)
 set clipboard+=unnamedplus
-"set clipboard=unnamed,autoselect
 
 syntax on
 set gfn=Bitstream\ Vera\ Sans\ Mono\ 12
 set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp
 set encoding=utf-8
-
-"移動が制限されるのでコメントアウト
-"set nocompatible
 
 set list
 
