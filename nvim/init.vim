@@ -99,6 +99,7 @@ syntax on
 set gfn=Bitstream\ Vera\ Sans\ Mono\ 12
 set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp
 set encoding=utf-8
-
 set list
 
+"tmuxでvimの色が変なんになるのを防ぐ
+set t_ut=
