@@ -1,9 +1,9 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/lab/nakakei/.oh-my-zsh
+export ZSH=/Users/Keita/.oh-my-zsh
 
 ##set path for pyenv
-#export PATH="${PYENV_ROOT}/bin:$PATH"
-#export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:$PATH"
+export PYENV_ROOT="${HOME}/.pyenv"
 export XDG_CONFIG_HOME="$HOME/.config"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
