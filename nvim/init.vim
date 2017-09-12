@@ -101,5 +101,17 @@ set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp
 set encoding=utf-8
 set list
 
-"tmuxでvimの色が変なんになるのを防ぐ
-set t_ut=
+set t_ut= "tmuxでvimの色が変なんになるのを防ぐ
+set cursorline "カーソル行のハイライト
+highlight CursorLineNr ctermbg=117
+highlight CursorLine cterm=underline  ctermbg=NONE  ctermfg=NONE
+set wrap "ウィンドウより長い行は畳む
+set ambiwidth=double "マルチバイト文字の表示をいい感じにしてくるらしい
+
+"またがっている一行の上下のカーソル移動を可能にする
+nnoremap j gj
+nnoremap k gk
+
+"インサートモード中のctrl+a,eで、行頭行末移動
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
