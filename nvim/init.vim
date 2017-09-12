@@ -93,7 +93,7 @@ set whichwrap+=h,l,<,>,[,],b,s
 set mouse=n
 
 "バッファをクリップボードにコピー(for OSX)
-set clipboard+=unnamedplus
+set clipboard=unnamed,unnamedplus
 
 syntax on
 set gfn=Bitstream\ Vera\ Sans\ Mono\ 12
