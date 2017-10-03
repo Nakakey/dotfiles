@@ -115,3 +115,6 @@ nnoremap k gk
 "インサートモード中のctrl+a,eで、行頭行末移動
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
+
+"インサートモードでのdeleteをctrl+dで実現
+inoremap <C-h> <C-d>
