@@ -118,3 +118,5 @@ inoremap <C-e> <C-o>$
 
 "インサートモードでのdeleteをctrl+dで実現
 inoremap <C-h> <C-d>
+"Yでカレント一から行末までヤンク
+nnoremap Y y$
