@@ -4,6 +4,14 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
+#nerdtreeにgitgutterの機能が付く
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+
+# gitの変更点明示
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
 
@@ -11,13 +19,7 @@ repo = 'nanotech/jellybeans.vim'
 repo    = 'vim-airline/vim-airline'
 depends = ['/vim-airline-themes']
 hook_add = '''
-    let g:airline_powerline_fonts = 1
-    let g:airline_theme = 'bubblegum'
-    let g:airline_highlighting_cache = 1
-    let g:airline#extensions#virtualenv#enabled = 1
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#buffer_idx_mode = 1
-    set laststatus=2
+  source ~/.config/nvim/plugins/vim-airline.rc.vim
 '''
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
@@ -43,7 +45,23 @@ hook_post_update = '''
 '''
 
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
+repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
-repo = 'Shougo/context_filetype.vim'
+repo = 'zchee/deoplete-jedi'
+on_i = 1
+on_ft = 'python'
+
+#markdownのプレビュー
+[[plugins]]
+repo = 'kannokanno/previm'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+#ale(syntax チェッカー)
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+  source ~/.config/nvim/plugins/ale.rc.vim
+'''
