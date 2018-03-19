@@ -1,6 +1,7 @@
 "" neoterm for python
 let g:neoterm_autoscroll = 1
-let g:neoterm_position = 'horizontal'
+"なぜかエラー吐かれるんご
+"let g:neoterm_position = 'horizontal'
 "" IPythonが複数行送れないので，replを普通のPythonインタープリタに
 let g:neoterm_repl_python = 'python'
 tnoremap <silent> <ESC> <C-\><C-n><C-w>
