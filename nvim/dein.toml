@@ -63,6 +63,7 @@ hook_add = '''
 '''
 
 # vim内にterminal起動するneotermさん
+# python, r のインタラクティブシェルを提供しているらしい
 [[plugins]]
 repo = 'kassio/neoterm'
 if = "has('nvim')"
