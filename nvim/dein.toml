@@ -70,3 +70,10 @@ if = "has('nvim')"
 hook_add = '''
   source ~/.config/nvim/plugins/neoterm.rc.vim
 '''
+
+# for Rmark-down
+[[plugins]]
+repo = 'vim-pandoc/vim-pandoc'
+
+[[plugins]]
+repo = 'vim-pandoc/vim-pandoc-syntax'

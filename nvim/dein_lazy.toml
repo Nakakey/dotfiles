@@ -50,6 +50,13 @@ repo= 'gaalcaras/ncm-R'
 on_ft = ['rmd','r']
 
 [[plugins]]
+repo='vim-pandoc/vim-rmarkdown'
+on_ft = ['rmd']
+hook_source = '''
+  source ~/.config/nvim/plugins/rmarkdown.rc.vim
+'''
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 if = "has('nvim')"
