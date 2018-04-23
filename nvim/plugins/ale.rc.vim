@@ -23,3 +23,7 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
 \   'python': ['flake8'],
 \}
+
+" 警告の移動設定
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
