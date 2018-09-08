@@ -1,9 +1,9 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Keita/.oh-my-zsh
+export ZSH=/home/lab/nakakei/.oh-my-zsh
 
 ##set path for pyenv
-export PATH="${PYENV_ROOT}/bin:$PATH"
 export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 ZSH_THEME="bullet-train"
 
@@ -124,4 +124,17 @@ alias fs2="sshfs nakakei@mercurius: mountpoint/"
 alias um="diskutil unmount mountpoint"
 
 eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv virtualenv-init -)"
+
+##osごとのキャッシュファイルsetting(主にnvimr)
+export OS=$(uname)
+if [ $OS = 'Linux' ]; then
+  export XDG_CACHE_HOME=$HOME/.cachenvimLinux
+  pyenv activate env_linux
+elif [ $OS = 'Darwin' ]; then
+  export XDG_CACHE_HOME=$HOME/.cachenvimMac
+  pyenv activate env_mac
+elif [ $OS = 'FreeBSD' ]; then
+  export XDG_CACHE_HOME=$HOME/.cachenvimFreeBSD
+  pyenv activate env_cent
+fi
