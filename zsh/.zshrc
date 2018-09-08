@@ -121,6 +121,7 @@ setopt hist_ignore_all_dups
 alias vim="nvim"
 alias fs1="sshfs nakakei@murata.eb.waseda.ac.jp: mountpoint/"
 alias fs2="sshfs nakakei@mercurius: mountpoint/"
+alias um="diskutil unmount mountpoint"
 
 eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
