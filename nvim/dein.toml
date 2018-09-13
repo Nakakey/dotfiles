@@ -4,13 +4,14 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-#nerdtreeにgitgutterの機能が付く
-[[plugins]]
+[[plugins]] #nerdtreeにgitgutter
 repo = 'Xuyuanp/nerdtree-git-plugin'
 
-# gitの変更点明示
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  let g:gitgutter_async=0
+'''
 
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
@@ -24,7 +25,7 @@ hook_add = '''
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
-[[plugins]]##インデントガイド
+[[plugins]]##indent guide
 repo='nathanaelkane/vim-indent-guides'
 hook_add= '''
   source ~/.config/nvim/plugins/vim-indent-guides.rc.vim
@@ -47,15 +48,12 @@ hook_post_update = '''
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
-
-#markdownのプレビュー
-[[plugins]]
+[[plugins]] #markdownのプレビュー
 repo = 'kannokanno/previm'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
-#ale(syntax チェッカー)
 [[plugins]]
 repo = 'w0rp/ale'
 hook_add = '''
@@ -75,5 +73,5 @@ hook_add = '''
 [[plugins]]
 repo = 'vim-pandoc/vim-pandoc'
 
-[[plugins]]
+[[plugins]] # pandoc-syntax
 repo = 'vim-pandoc/vim-pandoc-syntax'

@@ -39,4 +39,4 @@ let g:vimtex_fold_sections = [
 let g:vimtex_fold_enabled = 1
 let g:vimtex_fold_automatic = 1
 let g:vimtex_fold_envs = 0
-
+let g:vimtex_compiler_progname = 'nvr'

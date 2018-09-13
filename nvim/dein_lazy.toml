@@ -1,4 +1,44 @@
 [[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+if = "has('nvim')"
+on_i = 1
+hook_source = '''
+  source ~/.config/nvim/plugins/deoplete.rc.vim
+'''
+
+[[plugins]] # pythonの補完
+repo = 'zchee/deoplete-jedi'
+on_i = 1
+on_ft = 'python'
+
+[[plugins]] #neosnippet
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+hook_source = '''
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+  " Enable snipMate compatibility feature.
+  "let g:neosnippet#enable_snipmate_compatibility = 1
+  " Tell Neosnippet about the other snippets
+  "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+  " SuperTab like snippets behavior.
+  " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+  "imap <expr><TAB>
+  " \ pumvisible() ? "\<C-n>" :
+  " \ neosnippet#expandable_or_jumpable() ?
+  " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  "smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  "\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+'''
+on_i  = 1
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+
+
+[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
 
@@ -6,35 +46,11 @@ on_ft = ['go']
 repo = 'rcmdnk/vim-markdown'
 on_ft = ['md', 'markdown']
 
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-if = "!has('nvim')"
-on_i = 1
-hook_source = '''
-    let g:neocomplete#enable_at_startup = 1
-    source ~/.config/nvim/plugins/neocomplete.rc.vim
-'''
-
-[[plugins]]
-repo = 'Shougo/neosnippet'
-hook_source = '''
-  imap <C-k> <Plug>(neosnippet_expand_or_jump)
-  smap <C-k> <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k> <Plug>(neosnippet_expand_target)
-'''
-on_i  = 1
-on_ft = ['snippet']
-depends = ['neosnippet-snippets']
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
 [[plugins]] # toml syntax
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
-# nvim-r plugins
-[[plugins]]
+[[plugins]]# nvim-r plugins
 repo= 'jalvesaq/Nvim-R'
 on_ft = ['rmd','r']
 hook_source = '''
@@ -45,7 +61,7 @@ hook_source = '''
 repo= 'roxma/nvim-completion-manager'
 on_ft = ['rmd','r']
 
-[[plugins]]
+[[plugins]] #R language completion
 repo= 'gaalcaras/ncm-R'
 on_ft = ['rmd','r']
 
@@ -55,24 +71,7 @@ on_ft = ['rmd']
 hook_source = '''
   source ~/.config/nvim/plugins/rmarkdown.rc.vim
 '''
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends = 'context_filetype.vim'
-if = "has('nvim')"
-on_i = 1
-hook_source = '''
-  source ~/.config/nvim/plugins/deoplete.rc.vim
-'''
-
-# pythonの補完機能
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-on_i = 1
-on_ft = 'python'
-
-# latexの補完
-[[plugins]]
+[[plugins]] # latexの補完
 repo = 'lervag/vimtex'
 on_ft = ['tex']
 hook_source = '''
