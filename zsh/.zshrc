@@ -136,5 +136,5 @@ elif [ $OS = 'Darwin' ]; then
   pyenv activate env_mac
 elif [ $OS = 'FreeBSD' ]; then
   export XDG_CACHE_HOME=$HOME/.cachenvimFreeBSD
-  pyenv activate env_cent
+  pyenv activate env_fbsd
 fi
