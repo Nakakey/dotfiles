@@ -1,10 +1,11 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/lab/nakakei/.oh-my-zsh
+export ZSH="${HOME}/.oh-my-zsh"
+export ZSH_FILES="${HOME}/.zsh"
 
 ##set path for pyenv
 export PYENV_ROOT="${HOME}/.pyenv"
 export PATH="${PYENV_ROOT}/bin:$PATH"
-export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME="${HOME}/.config"
 ZSH_THEME="bullet-train"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -117,11 +118,11 @@ setopt share_history
 # ヒストリに追加されるコマンドが古いものと同じなら古いものを削除
 setopt hist_ignore_all_dups
 
-##aliases
+##source aliases
 alias vim="nvim"
-alias fs1="sshfs nakakei@murata.eb.waseda.ac.jp: mountpoint/"
-alias fs2="sshfs nakakei@mercurius: mountpoint/"
-alias um="diskutil unmount mountpoint"
+if [ -f "${ZSH_FILES}/alias_sshfs.zsh" ]; then
+  source ${ZSH_FILES}/alias_sshfs.zsh
+fi
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
