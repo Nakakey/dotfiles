@@ -123,7 +123,11 @@ alias vim="nvim"
 if [ -f "${ZSH_FILES}/alias_sshfs.zsh" ]; then
   source ${ZSH_FILES}/alias_sshfs.zsh
 fi
-
+##source enviroment values
+alias vim="nvim"
+if [ -f "${ZSH_FILES}/EV.zsh" ]; then
+  source ${ZSH_FILES}/EV.zsh
+fi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
