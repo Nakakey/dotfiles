@@ -21,7 +21,6 @@ let g:vimtex_view_general_viewer
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
 "http://mmi.hatenablog.com/entry/2015/01/02/003517から拝借
-"感謝
 " foldの設定
 let g:vimtex_fold_parts = [
       \ "appendix",
