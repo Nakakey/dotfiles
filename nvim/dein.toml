@@ -34,6 +34,9 @@ hook_add= '''
 
 [[plugins]]# comment out
 repo = 'tyru/caw.vim'
+hook_add = '''
+  source ~/.config/nvim/plugins/caw.rc.vim
+'''
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
