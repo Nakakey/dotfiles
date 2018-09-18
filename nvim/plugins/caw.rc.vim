@@ -1,2 +1,2 @@
-nmap <C-c> <Plug>(caw:zeropos:toggle)
-vmap <C-c> <Plug>(caw:zeropos:toggle)
+nmap <C-[> <Plug>(caw:hatpos:toggle)
+vmap <C-[> <Plug>(caw:hatpos:toggle)
