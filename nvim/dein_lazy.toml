@@ -11,28 +11,13 @@ hook_source = '''
 repo = 'zchee/deoplete-jedi'
 on_i = 1
 on_ft = 'python'
-
 [[plugins]] #neosnippet
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 hook_source = '''
-  imap <C-k> <Plug>(neosnippet_expand_or_jump)
-  smap <C-k> <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k> <Plug>(neosnippet_expand_target)
-  " Enable snipMate compatibility feature.
-  "let g:neosnippet#enable_snipmate_compatibility = 1
-  " Tell Neosnippet about the other snippets
-  "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-  " SuperTab like snippets behavior.
-  " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-  "imap <expr><TAB>
-  " \ pumvisible() ? "\<C-n>" :
-  " \ neosnippet#expandable_or_jumpable() ?
-  " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-  "smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  "\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  source ~/.config/nvim/plugins/neosnippet.rc.vim
 '''
 on_i  = 1
 depends = ['neosnippet-snippets', 'context_filetype.vim']
@@ -71,9 +56,11 @@ on_ft = ['rmd']
 hook_source = '''
   source ~/.config/nvim/plugins/rmarkdown.rc.vim
 '''
+
 [[plugins]] # latexの補完
 repo = 'lervag/vimtex'
 on_ft = ['tex']
 hook_source = '''
   source ~/.config/nvim/plugins/vimtex.rc.vim
 '''
+

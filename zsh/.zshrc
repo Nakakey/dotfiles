@@ -132,14 +132,14 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 ##osごとのキャッシュファイルsetting(主にnvimr)
-export OS=$(uname)
-if [ $OS = 'Linux' ]; then
-  export XDG_CACHE_HOME=$HOME/.cachenvimLinux
-  pyenv activate env_linux
-elif [ $OS = 'Darwin' ]; then
-  export XDG_CACHE_HOME=$HOME/.cachenvimMac
-  pyenv activate env_mac
-elif [ $OS = 'FreeBSD' ]; then
-  export XDG_CACHE_HOME=$HOME/.cachenvimFreeBSD
-  pyenv activate env_fbsd
-fi
+# export OS=$(uname)
+# if [ $OS = 'Linux' ]; then
+#   export XDG_CACHE_HOME=$HOME/.cachenvimLinux
+#   pyenv activate env_linux
+# elif [ $OS = 'Darwin' ]; then
+#   export XDG_CACHE_HOME=$HOME/.cachenvimMac
+#   pyenv activate env_mac
+# elif [ $OS = 'FreeBSD' ]; then
+#   export XDG_CACHE_HOME=$HOME/.cachenvimFreeBSD
+#   pyenv activate env_fbsd
+# fi
