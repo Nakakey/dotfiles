@@ -116,7 +116,12 @@ nnoremap k gk
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 
+"インサートモードで上下左右
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 "インサートモードでのdeleteをctrl+dで実現
-inoremap <C-h> <C-d>
+inoremap <C-d> <C-h>
+
 "Yでカレント一から行末までヤンク
 nnoremap Y y$
