@@ -3,6 +3,9 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+hook_add = '''
+  source ~/.config/nvim/plugins/nerdtree.rc.vim
+'''
 
 [[plugins]] #nerdtreeにgitgutter
 repo = 'Xuyuanp/nerdtree-git-plugin'
@@ -83,3 +86,9 @@ hook_post_update = '''
   endif
   let g:dein#plugin.build = cmd
 '''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
