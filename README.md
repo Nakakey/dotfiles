@@ -2,7 +2,7 @@
 
 ## instalation
 
-### need
+### require
 install them before making symbolic link.
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - neovim
