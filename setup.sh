@@ -1,5 +1,12 @@
 #!bin/sh
 
+if type "zsh" > /dev/null 2>&1; then
+    echo "exist!"     #コマンドが存在する時の処理
+else
+    echo "NOT exist! you must install zsh first!" #コマンドが存在しないときの処理
+    exit
+fi
+
 # clone oh-my zsh if not
 if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
