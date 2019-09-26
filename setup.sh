@@ -8,7 +8,7 @@ if [ ! -d ~/.config ]; then
 fi
 
 if type "zsh" > /dev/null 2>&1; then
-    echo "exist!"
+    echo "zsh already exist! start setup."
 else
     echo "NOT exist! you must install zsh first!"
     exit
