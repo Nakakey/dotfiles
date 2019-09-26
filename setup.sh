@@ -1,9 +1,16 @@
 #!bin/sh
 
+if [ ! -d ~/.zsh ]; then
+  mkdir ~/.zsh
+fi
+if [ ! -d ~/.config ]; then
+  mkdir ~/.config
+fi
+
 if type "zsh" > /dev/null 2>&1; then
-    echo "exist!"     #コマンドが存在する時の処理
+    echo "exist!"
 else
-    echo "NOT exist! you must install zsh first!" #コマンドが存在しないときの処理
+    echo "NOT exist! you must install zsh first!"
     exit
 fi
 
@@ -41,4 +48,3 @@ if [ ! -d ~/.pyenv ]; then
   git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 fi
 
-mkdir ~/.zsh
