@@ -4,11 +4,24 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
-autocmd vimenter * NERDTree
+"Nerdtree README
+augroup NERDTreeSetting
+  autocmd!
+  autocmd StdinReadPre * let s:std_in = 1
+  if (argc() == 0 || argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in"))
+    autocmd vimenter * NERDTreeToggle
+  else
+    autocmd vimenter * NERDTreeToggle | wincmd p
+  endif
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+augroup END
 
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable  = '▶'
 let g:NERDTreeDirArrowCollapsible = '▼'
+let g:NERDTressShowHidden=1
+
+
 
 call NERDTreeHighlightFile('py',     'yellow',  'none', 'yellow',  '#151515')
 call NERDTreeHighlightFile('md',     'blue',    'none', '#3366FF', '#151515')

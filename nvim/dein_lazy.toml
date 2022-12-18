@@ -11,6 +11,7 @@ hook_source = '''
 repo = 'zchee/deoplete-jedi'
 on_i = 1
 on_ft = 'python'
+
 [[plugins]] #neosnippet
 repo = 'Shougo/neosnippet-snippets'
 
