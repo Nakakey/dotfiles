@@ -5,6 +5,7 @@ export ZSH_FILES="${HOME}/.zsh"
 ##set path for pyenv
 export PYENV_ROOT="${HOME}/.pyenv"
 export PATH="${PYENV_ROOT}/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export XDG_CONFIG_HOME="${HOME}/.config"
 ZSH_THEME="bullet-train"
 
@@ -49,7 +50,7 @@ ZSH_THEME="bullet-train"
 # Add wisely, as too many plugins slow down shell startup.
 
 #zsh-syntax-highlighting,zsh-autosuggestionsは外部プラグインのため，$ZSH/.oh-my-zsh/custom/plugin配下にインストール
-plugins=(git colorize emoji-clock emoji osx themes zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git colorize emoji-clock emoji macos themes zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
@@ -120,28 +121,26 @@ setopt hist_ignore_all_dups
 
 ##source aliases
 alias vim="nvim"
-if [ -f "${ZSH_FILES}/alias_sshfs.zsh" ]; then
-  source ${ZSH_FILES}/alias_sshfs.zsh
-fi
+
+# いらんかも
+# https://qiita.com/takuya0301/items/695f42f6904e979f0152
+alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin brew"
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+# poetry path
+export PATH="${HOME}/.local/bin:$PATH"
+# eccodes path
+export PATH=${PATH}:${HOME}/local/bin/
 
 ##source enviroment values
-alias vim="nvim"
 if [ -f "${ZSH_FILES}/EV.zsh" ]; then
   source ${ZSH_FILES}/EV.zsh
 fi
 
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-##osごとのキャッシュファイルsetting(主にnvimr)
-# export OS=$(uname)
-# if [ $OS = 'Linux' ]; then
-#   export XDG_CACHE_HOME=$HOME/.cachenvimLinux
-#   pyenv activate env_linux
-# elif [ $OS = 'Darwin' ]; then
-#   export XDG_CACHE_HOME=$HOME/.cachenvimMac
-#   pyenv activate env_mac
-# elif [ $OS = 'FreeBSD' ]; then
-#   export XDG_CACHE_HOME=$HOME/.cachenvimFreeBSD
-#   pyenv activate env_fbsd
-# fi
+if [ -f "${HOME}/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/path.zsh.inc"; fi
+# The next line enables shell command completion for gcloud.
+if [ -f "${HOME}/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/completion.zsh.inc"; fi
