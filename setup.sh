@@ -1,8 +1,23 @@
 #!bin/sh
 
+if [ ! -d ~/.zsh ]; then
+  mkdir ~/.zsh
+fi
+if [ ! -d ~/.config ]; then
+  mkdir ~/.config
+fi
+
+if type "zsh" > /dev/null 2>&1; then
+    echo "zsh already exist! start setup."
+else
+    echo "NOT exist! you must install zsh first!"
+    exit
+fi
+
 # clone oh-my zsh if not
 if [ ! -d ~/.oh-my-zsh ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  curl -Lo install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+  sh install.sh
 fi
 
 # make shimbolic link
@@ -11,14 +26,14 @@ ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/zsh/.tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 # clone zsh plugins into oh-my-zsh if not
-if [ ! -f ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
 
-if [ ! -f ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi
 
@@ -36,3 +51,4 @@ if type "brew" > /dev/null 2>&1; then
 else
   echo "cannot install pyenv, install homebrew first"
 fi
+
