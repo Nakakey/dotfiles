@@ -2,9 +2,9 @@
 export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_FILES="${HOME}/.zsh"
 
-##set path for pyenv
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bin:$PATH"
+## path to poetr(use when installing manually)
+export PATH="${HOME}/.local/bin:$PATH"
+
 export XDG_CONFIG_HOME="${HOME}/.config"
 ZSH_THEME="bullet-train"
 
@@ -49,7 +49,7 @@ ZSH_THEME="bullet-train"
 # Add wisely, as too many plugins slow down shell startup.
 
 #zsh-syntax-highlighting,zsh-autosuggestionsは外部プラグインのため，$ZSH/.oh-my-zsh/custom/plugin配下にインストール
-plugins=(git colorize emoji-clock emoji osx themes zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git colorize emoji-clock emoji macos themes zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
@@ -122,20 +122,6 @@ fi
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-##osごとのキャッシュファイルsetting(主にnvimr)
-# export OS=$(uname)
-# if [ $OS = 'Linux' ]; then
-#   export XDG_CACHE_HOME=$HOME/.cachenvimLinux
-#   pyenv activate env_linux
-# elif [ $OS = 'Darwin' ]; then
-#   export XDG_CACHE_HOME=$HOME/.cachenvimMac
-#   pyenv activate env_mac
-# elif [ $OS = 'FreeBSD' ]; then
-#   export XDG_CACHE_HOME=$HOME/.cachenvimFreeBSD
-#   pyenv activate env_fbsd
-# fi
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "${HOME}/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/path.zsh.inc"; fi
