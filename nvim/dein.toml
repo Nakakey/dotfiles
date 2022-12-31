@@ -56,15 +56,6 @@ hook_add = '''
   source ~/.config/nvim/plugins/ale.rc.vim
 '''
 
-# vim内にterminal起動するneotermさん
-# python, r のインタラクティブシェルを提供しているらしい
-# [[plugins]]
-# repo = 'kassio/neoterm'
-# if = "has('nvim')"
-# hook_add = '''
-#   source ~/.config/nvim/plugins/neoterm.rc.vim
-# '''
-
 # for Rmark-down
 [[plugins]]
 repo = 'vim-pandoc/vim-pandoc'
