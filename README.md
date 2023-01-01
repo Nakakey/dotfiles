@@ -1,23 +1,13 @@
-# My Dotfiles
-
 ## instalation
 
-### require
-install them before making symbolic link.
-- ~~[oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)~~ (include installing in setup.sh)
-- neovim
-- python3
+```sh
+sh setup.sh
+```
 
-**For enable neovim plugin enhance, install followling python3 modules**
-- flake8
-- neovim
+### requirement
 
-## installing neovim
+before executing `setup.sh`, install following tools
 
-### Mac
-
-`brew install neovim`
-
-### Ubuntu
-followling this page
-[neovim/neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+- xcode
+- zsh
+- homebrew
