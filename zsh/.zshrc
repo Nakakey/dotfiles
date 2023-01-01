@@ -2,7 +2,7 @@
 export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_FILES="${HOME}/.zsh"
 
-## path to poetr(use when installing manually)
+## path to poetry(use when installing manually)
 export PATH="${HOME}/.local/bin:$PATH"
 
 export XDG_CONFIG_HOME="${HOME}/.config"
@@ -115,7 +115,6 @@ if [ -f "${ZSH_FILES}/set_alias.zsh" ]; then
 fi
 
 ##source enviroment values
-alias vim="nvim"
 if [ -f "${ZSH_FILES}/EV.zsh" ]; then
   source ${ZSH_FILES}/EV.zsh
 fi
